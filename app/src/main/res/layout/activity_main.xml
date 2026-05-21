@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d1117"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- כותרת -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AES67 Transmitter"
+            android:textSize="24sp"
+            android:textColor="#58a6ff"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="שידור אודיו ל-Q-SYS"
+            android:textSize="14sp"
+            android:textColor="#8b949e"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- כרטיס הגדרות -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="כתובת Q-SYS Core (IP)"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etIp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="192.168.1.100"
+                android:text="192.168.1.100"
+                android:inputType="text"
+                android:textColor="#e6edf3"
+                android:textColorHint="#444c56"
+                android:background="#21262d"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="פורט RTP"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="5004"
+                android:text="5004"
+                android:inputType="number"
+                android:textColor="#e6edf3"
+                android:textColorHint="#444c56"
+                android:background="#21262d"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ערוצים"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerChannels"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#21262d"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Packet Time"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerPtime"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#21262d"
+                android:layout_marginBottom="4dp"/>
+
+        </LinearLayout>
+
+        <!-- כפתור שידור -->
+        <Button
+            android:id="@+id/btnToggle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="▶ התחל שידור"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- מד עוצמה -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="רמת אות מיקרופון"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <ProgressBar
+                android:id="@+id/levelBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="#3fb950"/>
+
+        </LinearLayout>
+
+        <!-- סטטוס -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="מוכן"
+            android:textColor="#58a6ff"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- SDP Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SDP Session Description"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvSdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#6e7681"
+                android:textSize="11sp"
+                android:fontFamily="monospace"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
