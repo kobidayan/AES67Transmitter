@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace 'com.qsys.aes67transmitter'
     compileSdk 34
     defaultConfig {
         applicationId "com.qsys.aes67transmitter"
